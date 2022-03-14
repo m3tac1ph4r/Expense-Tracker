@@ -15,6 +15,19 @@ h4{
     text-transform: uppercase;
 }
 
+/* .money{
+    font-size: 2;
+    letter-spacing: 1px;
+    margin: 5px 0;
+} */
 .inc-exp-containter >div:first-of-type{
-     border-right: 1px solid rgb(179, 177, 177);
+     border-right: 1px solid #c7c7c7;
+}
+
+/* .btn:focus,.delete-btn:focus{
+    outline: 0;
+} */
+
+.list{
+    list-style-type: none;
 }

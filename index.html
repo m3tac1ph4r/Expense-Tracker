@@ -46,13 +46,13 @@
       <!-- flex-grow-1 flex-shrink-1 means flex=1 -->
       <div class="flex-grow-1 flex-shrink-1 text-center">
         <h4><b>INCOME</b></h4>
-        <p id="money_add" class="money_add">
+        <p id="money-add" class="money-add text-success h5">
           +$0.00
         </p>
       </div>
       <div class="flex-grow-1 flex-shrink-1 text-center">
         <h4><b>EXPENSE</b></h4>
-        <p id="money_minus" class="money_minus">
+        <p id="money-minus" class="money-minus text-danger h5">
           -$0.00
         </p>
       </div>
@@ -60,23 +60,23 @@
     <!-- INCOME EXPENSE SECTION ENDS-->
 
     <h3>History</h3>
-    <ul>
+    <ul id="list" class="list">
       <li class="minus">
-        Cash <span>-$400</span><button class="delete_btn">x</button>
+        Cash <span>-$400</span><button class="delete-btn">x</button>
       </li>
     </ul>
 
     <h3>Add New Transition</h3>
     <form id="form">
-      <div class="form-control mb-3">
-        <label for="Text" class="form-label">Text</label>
+      <div class="mb-3">
+        <label for="Text" class="form-label"><b>Text</b></label>
         <input type="text" class="form-control" id="text" placeholder="Enter Text">
       </div>
-      <div class="form-control mb-3">
-        <label for="Amount" class="form-label">Amount</label>
+      <div class="mb-3">
+        <label for="Amount" class="form-label"><b>Amount</b></label>
         <input type="number" class="form-control" id="amount" placeholder="Enter Amount">
       </div>
-      <button type="submit" class="btn btn-primary">Submit Transaction</button>
+      <button type="submit" class="btn btn-primary w-100">Submit Transaction</button>
     </form>
   </div>
 
