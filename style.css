@@ -31,3 +31,22 @@ h4{
 .list{
     list-style-type: none;
 }
+
+.list li{
+    background-color: #fff;
+    color: #333;
+}
+
+.list li.minus{
+    border-right: 5px solid rgb(212, 16, 16);
+}
+.list li.add {
+    border-right: 5px solid rgb(31, 126, 31);
+}
+
+.delete-btn{
+    cursor: pointer;
+    background-color: rgb(223, 101, 101);
+    border: 0;
+    color: white;
+}
