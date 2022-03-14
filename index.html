@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Expense Tracker</title>
@@ -18,7 +18,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #24313b;"">
   <div class=" container-fluid">
-    <a class="navbar-brand" href="#"><b>Expense Tracker</b></a>
+    <a class="navbar-brand " href="#"><b>Expense Tracker</b></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -42,15 +42,16 @@
   <div class="container my-5">
     <h4><b>YOUR BALANCE</b></h4>
     <h1 id="balance">$0.00</h1>
-    <div class="inc-exp-containter">
-      <div>
-        <h4>INCOME</h4>
+    <div class="inc-exp-containter d-flex shadow-lg p-3 mb-5  my-4 bg-white rounded justify-content-center w-50 container-fluid">
+      <!-- flex-grow-1 flex-shrink-1 means flex=1 -->
+      <div class="flex-grow-1 flex-shrink-1 text-center">
+        <h4><b>INCOME</b></h4>
         <p id="money_add" class="money_add">
           +$0.00
         </p>
       </div>
-      <div>
-        <h4>EXPENSE</h4>
+      <div class="flex-grow-1 flex-shrink-1 text-center">
+        <h4><b>EXPENSE</b></h4>
         <p id="money_minus" class="money_minus">
           -$0.00
         </p>
