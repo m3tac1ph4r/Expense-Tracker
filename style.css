@@ -49,4 +49,15 @@ h4{
     background-color: rgb(223, 101, 101);
     border: 0;
     color: white;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-100%,-50%);
+    line-height: 20px;
+    opacity: 0;
+    transition: opacitity 0.3s ease;
+}
+
+.list li:hover .delete-btn{
+    opacity: 1;
 }
