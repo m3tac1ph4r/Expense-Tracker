@@ -29,10 +29,10 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <!-- <form class="d-flex">
+        <input id="searchEle" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      </form> -->
     </div>
     </div>
   </nav>
@@ -70,10 +70,10 @@
     <form id="form">
       <div class="mb-3">
         <label for="Text" class="form-label"><b>Text</b></label>
-        <input type="text" class="form-control" id="text" placeholder="Enter Text">
+        <input type="text" id="text" class="form-control" id="text" placeholder="Enter Text">
       </div>
       <div class="mb-3">
-        <label for="Amount" class="form-label"><b>Amount</b></label>
+        <label for="Amount" class="form-label"><b>Amount</b><br>(positive - income, negative - expense)</label>
         <input type="number" class="form-control" id="amount" placeholder="Enter Amount">
       </div>
       <button type="submit" class="btn btn-primary w-100">Submit Transaction</button>

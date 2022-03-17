@@ -18,7 +18,7 @@ showTransaction();
 function addTransactionDOM(transaction) {
     const sign = transaction.amount < 0 ? "-" : "+";
     const item = document.createElement("li");
-    item.classList.add(transaction.amount < 0 ? 'minus' : 'add', 'd-flex', 'position-relative', 'justify-content-between', 'shadow-sm', 'p-1', 'mb-2', 'bg-white', 'rounded', 'w-50');
+    item.classList.add(transaction.amount < 0 ? 'minus' : 'add','trans', 'd-flex', 'position-relative', 'justify-content-between', 'shadow-sm', 'p-1', 'mb-2', 'bg-white', 'rounded', 'w-50');
     item.innerHTML = `
     ${transaction.text}<span>${sign}$${Math.abs(transaction.amount)}</span>
     <button class="delete-btn mb-1 me-2" onclick="removeTransaction(${transaction.id})">x</button>`;
