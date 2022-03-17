@@ -13,6 +13,7 @@ const amount = document.getElementById("amount");
 //     amount: +20
 // }, ];
 let transactions=[];
+showTransaction();
 
 function addTransactionDOM(transaction) {
     const sign = transaction.amount < 0 ? "-" : "+";
@@ -24,10 +25,11 @@ function addTransactionDOM(transaction) {
     list.appendChild(item);
 }
 
-// remove Transaction
+// deleting Transaction
 function removeTransaction(id) {
     transactions=transactions.filter(
         (transaction) =>transaction.id != id);
+    updateLocalStorage();
     Init();
 }
 
@@ -41,6 +43,15 @@ function updateValues() {
     balance.innerText = `$${total}`;
     money_plus.innerText = `$${income}`;
     money_minus.innerText = `$${expense}`;
+}
+
+
+function showTransaction(){
+    let localStoragetransaction=localStorage.getItem("transactions");
+    if(localStoragetransaction==null)
+        transactions=[];
+    else
+        transactions=JSON.parse(localStoragetransaction);
 }
 
 // adding transaction when user submit the form
@@ -57,6 +68,7 @@ function addTransaction(e) {
         transactions.push(transaction);
         addTransactionDOM(transaction);
         updateValues();
+        updateLocalStorage();
 
         text.value = "";
         amount.value = "";
@@ -68,8 +80,9 @@ function generateId() {
 }
 
 //  updating local storage
-
-
+function updateLocalStorage() {
+    localStorage.setItem("transactions",JSON.stringify(transactions));
+}
 
 // INIT FUNCTION
 function Init() {
