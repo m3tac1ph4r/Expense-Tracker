@@ -6,6 +6,7 @@ const form = document.getElementById("form");
 const text = document.getElementById("text");
 const amount = document.getElementById("amount");
 
+
 //  adding transaction in the DOM
 // let transactions = [{
 //     id: 1,
@@ -33,9 +34,35 @@ function removeTransaction(id) {
     Init();
 }
 
+function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string','Name');
+    data.addColumn('number', 'Value');
+    let amount = transactions.map(transaction => transaction.amount);
+    let income = parseInt(amount.filter(item => item > 0).reduce((acc, item) => (acc += item), 0).toFixed(2));
+    let expense = parseInt((amount.filter(item => item < 0).reduce((acc, item) => (acc += item), 0) * -1).toFixed(2));
+
+    data.addRow(["Income ",income]);
+    data.addRow(["Expense ", expense]);
+
+    var options={
+        'title':'Expense Pie Chart',
+        'is3D':true,
+        'titleTextStyle': {
+            'fontSize': '26',
+        },
+        'width': 500,
+        'height': 250
+    };
+    var chart = new google.visualization.PieChart(document.getElementById('mychart'));
+    chart.draw(data, options);
+}
 
 // Update Values of balance and income and expense
 function updateValues() {
+    google.charts.load('current', {
+                'packages': ['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
     const amount = transactions.map(transaction => transaction.amount);
     const total = amount.reduce((acc, item) => (acc += item), 0).toFixed(2);
     const income = amount.filter(item => item > 0).reduce((acc, item) => (acc += item), 0).toFixed(2);
@@ -51,7 +78,13 @@ function showTransaction(){
     if(localStoragetransaction==null)
         transactions=[];
     else
+    {
         transactions=JSON.parse(localStoragetransaction);
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+    }
 }
 
 // adding transaction when user submit the form
